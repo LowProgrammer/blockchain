@@ -1,9 +1,9 @@
 package main
 
 import(
-	"fmt"
+	
 )
-type block struct{
+type Block struct{
 	//版本
 	Version int32
 	//前区块的哈希值
@@ -23,7 +23,7 @@ type block struct{
 	Data []byte
 }
 
-func NewBlock(data string.prevBlockHash []byte) *Block{
+func NewBlock(data string,prevBlockHash []byte) *Block{
 	//
 	var block Block
 	block = Block{
@@ -55,6 +55,6 @@ func (block* Block)SetHash(){
 }
 
 
-func NewGenesisBlock() {
-	NewBlock("Genesis Block",[]byte{})
+func NewGenesisBlock() *Block {
+	return NewBlock("Genesis Block",[]byte{})
 }
